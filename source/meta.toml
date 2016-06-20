@@ -40,6 +40,12 @@ i18n = "archive"
 hover = "archive"
 
 [[nav]]
+link = "/favorites.html"
+title = "Favorites"
+i18n = "favorites"
+hover = "favorites"
+
+[[nav]]
 link = "/about.html"
 title = "About"
 i18n = "about"
