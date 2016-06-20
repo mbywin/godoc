@@ -57,7 +57,7 @@ tags = ["python"]
 3. flask
 4. webpy
 
-### __协程框架__
+### __协程框架(异步IO)__
 1. ___gevent___
 2. tornado
 3. asyncio(异步IO，仅python3.4以上版本支持)
@@ -65,7 +65,7 @@ tags = ["python"]
 *[Python 中的进程、线程、协程、同步、异步、回调](https://segmentfault.com/a/1190000001813992 "协程")*
 
 ### __异步任务队列__
-1. celery  
+#####celery  
 *消息代理*
 >- *RabbitMQ*·
 >- *redis*  
