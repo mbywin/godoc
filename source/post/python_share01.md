@@ -72,7 +72,20 @@ tags = ["python"]
 
 *Celery本身不含消息服务，它使用第三方消息服务来传递任务，目前，Celery支持的消息服务有RabbitMQ、Redis甚至是数据库，当然Redis应该是最佳选择。*
 
+<!--lang: python-->
+    import time
+    from celery import Celery
+
+    celery = Celery('tasks', broker='redis://localhost:6379/0')
+
+    @celery.task
+    def sendmail(mail):
+    	print('sending mail to %s...' % mail['to'])
+        time.sleep(2.0)
+        print('mail sent.')
+    from tasks import sendmail
+    sendmail.delay(dict(to='test@qq.com'))
+
 ### __部署__
 ___gunicorn + supervisor + virtualenv___(*python 项目部署难度高*)
 
-<!--python-->
