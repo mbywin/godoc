@@ -42,9 +42,9 @@ tags = ["python"]
    *python setup.py install*  
 2. easy_install  
    *yum install python-setuptools*  
-   *easy_install flask==<version\>*  
+   *easy_install flask=={version}>*  
 3. pip  
-   *pip install flask==<version\>*  
+   *pip install flask=={version}*  
    *pip install -r requirement.txt*
 
 ###__开发工具:__
@@ -75,4 +75,4 @@ tags = ["python"]
 ### __部署__
 ___gunicorn + supervisor + virtualenv___(*python 项目部署难度高*)
 
-<!--￼python-->
+<!--python-->

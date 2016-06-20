@@ -12,7 +12,7 @@ keyword = "golang,python,docker"
 desc = "golang,python,docker"
 
 # build links for feed, sitemap
-domain = "godco.me"
+domain = "godoc.me"
 
 # root path for site# if empty, build as http://{domain}/
 root = "http://localhost:9899/"
@@ -60,7 +60,6 @@ bio = ""
 disqus = "mbywin"
 # duoshuo short name
 duoshuo = ""
-google = "mbywin@gmail.com"
 
 # analytics settings
 # please only set one value
