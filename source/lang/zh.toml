@@ -3,6 +3,7 @@
 home = "文章"
 archive = "归档"
 about = "关于"
+favorites = "收藏夹"
 source = "代码"
 
 # about post
