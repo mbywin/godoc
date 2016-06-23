@@ -1,8 +1,8 @@
 ```toml
 
-title = "Python分享-01"
+title = "tornado websocket实现日志实时打印"
 slug = "2016"
-date = "2016-06-19 18:49:59"
+date = "2016-06-23 09:00:59"
 author = "miaoboyong"
 tags = ["python,tornado"]
 
