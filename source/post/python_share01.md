@@ -67,7 +67,7 @@ tags = ["python"]
 ### __异步任务队列__
 #####celery  
 *消息代理*
->- *RabbitMQ*·
+>- *RabbitMQ*
 >- *redis*  
 
 *Celery本身不含消息服务，它使用第三方消息服务来传递任务，目前，Celery支持的消息服务有RabbitMQ、Redis甚至是数据库，当然Redis应该是最佳选择。*
