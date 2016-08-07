@@ -80,9 +80,11 @@ tags = ["python"]
 			- remove
 			- sort
 	- *列表解析*
+
 	```python
 		L = [(x+1,y+1) for x in range(3) for y in range(5) if y> 2 ]
 	```
+
 	- *元祖使用*
 		- 元组可以在映射(和集合的成员)中作为键(key)使用，而列表不行
 	    - 元组作为很多内建函数和方法的返回值存在
@@ -93,13 +95,15 @@ tags = ["python"]
 		- 查找和插入的速度极快，不会随着key的增加而变慢
 		- 需要占用大量的内存，内存浪费多
 	- *字典的基本操作*
-		- 由于字典也是序列的一种，所起它有很多操作(比如len和成员资格)都和序列类似：
+		- 由于字典也是序列的一种，所起它有很多操作(比如len和成员资格)都和序列类似:
+
 	```python
 		len(d)：返回d中项的数量;
 		d[key]：返回这个key对应的value;
 		d[key] = v：将值v映射到key值为k的项;
 		key in did:检查d中是否包含键为k的项;
 	```
+
 	- *字典常用函数*
 		- clear
 		- copy
@@ -114,6 +118,7 @@ tags = ["python"]
 		- setdefault
 		- update
 	- *字典遍历：*
+
 	```python
 		for i in d:
 			t = i + d[i]
@@ -127,15 +132,19 @@ tags = ["python"]
 		for k,v in zip(d.iterkeys(),d.itervalues()):
 			t = k + v
 	```
+
 	- *字典解析：*
+
 	```python
 		{value:key for key ,value in a_dict.items()}
 	```
+
 5. ___集合___
 	- *特点*
 		- 无序的
 		- 元素不重复（常用于列表去重）
 	- *集合操作*
+
 	```python
 		a = 'hello'
 		s = set(a)
@@ -148,12 +157,14 @@ tags = ["python"]
 		集合的数据操作:
 			交集、合集（并集）、差集等：
 	```
+
 ![集合操作](http://www.iplaypython.com/uploads/allimg/131215/2-131215203406215.jpg "集合操作")
 
 ***
 
 #### __python流程控制:__
 1. ___if 语句___
+
 ```python
 	if x < 0:
 		x = 0
@@ -165,7 +176,9 @@ tags = ["python"]
 	else:
 		print('More')
 ```
+
 2. ___for 语句___
+
 ```python
 	words = ['cat', 'window', 'defenestrate', '']
 	for word in words:
@@ -174,12 +187,14 @@ tags = ["python"]
 	else:
 		print(words)
 ```
+
 3. ___range() 函数__
 
 4. ___break 和 continue 语句___
 	- break:	用于跳出最近的一级 for 或 while 循环。
 	- continue:	 语句是从 C 中借鉴来的，它表示循环继续执行下一次迭代:
 5. ___pass 语句___
+
 ```python
 	pass 语句什么也不做。它用于那些语法上必须要有什么语句，但程序什么也不做的场合，例如:
 
@@ -193,6 +208,7 @@ tags = ["python"]
 #### __函数:__
 1. ___调用函数___
 2. ___定义函数___
+
 ```python
 	def my_abs(x):
 		if not isinstance(x, (int, float)):
@@ -205,8 +221,10 @@ tags = ["python"]
 	def test():
 		return 1, 2
 ```
+
 3. ___函数的参数___
 	- 位置参数
+
 	```python
 		def power(x, n):
 			s = 1
@@ -215,7 +233,9 @@ tags = ["python"]
 				s = s * x
 		return s
 	```
+
 	- 默认参数
+
 	```python
 		def power(x, n=2):
 			s = 1
@@ -224,7 +244,9 @@ tags = ["python"]
 				s = s * x
 			return s
 	```
+
 	- 可变参数
+
 	```python
 		def calc(*numbers):
 			sum = 0
@@ -232,17 +254,23 @@ tags = ["python"]
 				sum = sum + n * n
 			return sum
 	```
+
 	- 关键字参数
+
 	```python
 		def person(name, age, **kw):
 			print('name:', name, 'age:', age, 'other:', kw)
-		```
+	```
+
 	- 命名关键字参数
+
 	```python
 		def person(name, age, *args, city, job):
 			print(name, age, args, city, job)
 	```
+
 	- 参数组合
+
 	```python
 		def f1(a, b, c=0, *args, **kw):
 			print('a =', a, 'b =', b, 'c =', c, 'args =', args, 'kw =', kw)
@@ -250,30 +278,34 @@ tags = ["python"]
 		def f2(a, b, c=0, *, d, **kw):
 			print('a =', a, 'b =', b, 'c =', c, 'd =', d, 'kw =', kw)
 	```
+
 4. ___递归函数___
-	在函数内部，可以调用其他函数。如果一个函数在内部调用自身本身，这个函数就是递归函数
-	使用递归函数的优点是逻辑简单清晰，缺点是过深的调用会导致栈溢出。
+	- 在函数内部，可以调用其他函数。如果一个函数在内部调用自身本身，这个函数就是递归函数
+	- 使用递归函数的优点是逻辑简单清晰，缺点是过深的调用会导致栈溢出。
+
 ```python
 	def fact(n):
 		if n==1:
 			return 1
 		return n * fact(n - 1)
 ```
+
 5. ___函数式编程___
 	- 高阶函数
 		- map/reduce：
-		```python
-			def f(x):
-    			return x * x
 
-			r = map(f, [1, 2, 3, 4, 5, 6, 7, 8, 9])
-			# 列表中int转为str
-			list(map(str, [1, 2, 3, 4, 5, 6, 7, 8, 9]))
+	```python
+		def f(x):
+			return x * x
 
-			# reduce
-			from functools import reduce
-			def fn(x, y):
-    			return x * 10 + y
+		r = map(f, [1, 2, 3, 4, 5, 6, 7, 8, 9])
+		# 列表中int转为str
+		list(map(str, [1, 2, 3, 4, 5, 6, 7, 8, 9]))
 
-			reduce(fn, [1, 3, 5, 7, 9])
-		```
+		# reduce
+		from functools import reduce
+		def fn(x, y):
+			return x * 10 + y
+
+		reduce(fn, [1, 3, 5, 7, 9])
+	```
