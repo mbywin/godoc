@@ -19,6 +19,7 @@ tags = ["python"]
 		- split
 		- strip
 	- *字符串格式化
+
 	```python
         通过位置:
         	'Hello, %s' % 'world' or 'Hello, {0}'.format('world')
@@ -40,6 +41,7 @@ tags = ["python"]
         精度与类型:
         	'{:.2f}'.format(3.1415926)
 	```
+
 3. ___序列（列表，元祖）___
 	- *通用操作*
 		- 索引
@@ -63,9 +65,11 @@ tags = ["python"]
 		*注：只有1个元素的tuple定义时必须加一个逗号,，来消除歧义: `t = (1,)`*
 	- *列表操作*
 		- *list函数*
+
 		```python
 			list()
 		```
+
 		- *基本的列表操作*
 			- 元素赋值
 			- 删除元素
