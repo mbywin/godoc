@@ -366,34 +366,37 @@ tags = ["python"]
             return fs
 	```
 - 匿名函数(lambda)
-```python
-	 list(map(lambda x: x * x, [1, 2, 3, 4, 5, 6, 7, 8, 9]))
-```
+
+    ```python
+         list(map(lambda x: x * x, [1, 2, 3, 4, 5, 6, 7, 8, 9]))
+    ```
 
 - 装饰器
-```python
-	import functools
 
-	def log(func):
-    	@functools.wraps(func)
-    	def wrapper(*args, **kw):
-        	print('call %s():' % func.__name__)
-        	return func(*args, **kw)
-    	return wrapper
+    ```python
+        import functools
 
-	def log(text):
-        def decorator(func):
+        def log(func):
             @functools.wraps(func)
             def wrapper(*args, **kw):
-                print('%s %s():' % (text, func.__name__))
+                print('call %s():' % func.__name__)
                 return func(*args, **kw)
             return wrapper
-    	return decorator
-```
-- 偏函数
-> functools.partial的作用就是，把一个函数的某些参数给固定住（也就是设置默认值），返回一个新的函数，调用这个新函数会更简单。
 
-```python
-	int2 = functools.partial(int, base=2)
-    max2 = functools.partial(max, 10)
-```
+        def log(text):
+            def decorator(func):
+                @functools.wraps(func)
+                def wrapper(*args, **kw):
+                    print('%s %s():' % (text, func.__name__))
+                    return func(*args, **kw)
+                return wrapper
+            return decorator
+    ```
+
+- 偏函数
+	> functools.partial的作用就是，把一个函数的某些参数给固定住（也就是设置默认值），返回一个新的函数，调用这个新函数会更简单。
+
+    ```python
+        int2 = functools.partial(int, base=2)
+        max2 = functools.partial(max, 10)
+    ```
