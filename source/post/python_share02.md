@@ -80,6 +80,7 @@ tags = ["python"]
 			- remove
 			- sort
 	- *列表解析*
+
 	```python
 		L = [(x+1,y+1) for x in range(3) for y in range(5) if y> 2 ]
 	```
