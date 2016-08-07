@@ -213,18 +213,18 @@ tags = ["python"]
 1. ___调用函数___
 2. ___定义函数___
 
-```python
-	def my_abs(x):
-		if not isinstance(x, (int, float)):
-			raise TypeError('bad operand type')
-		if x >= 0:
-			return x
-		else:
-			return -x
-	返回多个值
-	def test():
-		return 1, 2
-```
+    ```python
+        def my_abs(x):
+            if not isinstance(x, (int, float)):
+                raise TypeError('bad operand type')
+            if x >= 0:
+                return x
+            else:
+                return -x
+        返回多个值
+        def test():
+            return 1, 2
+    ```
 
 3. ___函数的参数___
 	- 位置参数
@@ -287,16 +287,16 @@ tags = ["python"]
 	- 在函数内部，可以调用其他函数。如果一个函数在内部调用自身本身，这个函数就是递归函数
 	- 使用递归函数的优点是逻辑简单清晰，缺点是过深的调用会导致栈溢出。
 
-```python
-	def fact(n):
-		if n==1:
-			return 1
-		return n * fact(n - 1)
-```
+    ```python
+        def fact(n):
+            if n==1:
+                return 1
+            return n * fact(n - 1)
+    ```
 
 5. ___函数式编程___
-	- 高阶函数
-		- map/reduce：
+- 高阶函数
+	- map/reduce：
 
 	```python
 		def f(x):
@@ -313,3 +313,16 @@ tags = ["python"]
 
 		reduce(fn, [1, 3, 5, 7, 9])
 	```
+	- filter
+		> 在一个list中，删掉偶数，只保留奇数:
+
+    ```python
+        def is_odd(n):
+            return n % 2 == 1
+        list(filter(is_odd, [1, 2, 4, 5, 6, 9, 10, 15]))
+    ```
+	- sorted
+
+    ```python
+        sorted(['bob', 'about', 'Zoo', 'Credit'], key=str.lower, reverse=True)
+    ```
