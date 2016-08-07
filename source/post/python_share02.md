@@ -81,7 +81,7 @@ tags = ["python"]
 			- sort
 	- *列表解析*
 		```python
-			L= [(x+1,y+1) for x in range(3) for y in range(5) if y> 2 ]
+			L = [(x+1,y+1) for x in range(3) for y in range(5) if y> 2 ]
 		```
 	- *元祖使用*
 		- 元组可以在映射(和集合的成员)中作为键(key)使用，而列表不行
@@ -133,8 +133,8 @@ tags = ["python"]
 		```
 5. ___集合___
 	- *特点*
-			1. 无序的
-			2. 元素不重复（常用于列表去重）
+		- 无序的
+		- 元素不重复（常用于列表去重）
 	- *集合操作*
 	```python
 		a = 'hello'
