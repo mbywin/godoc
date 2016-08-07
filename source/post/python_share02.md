@@ -67,6 +67,27 @@ tags = ["python"]
 			list()
 			'hello'
 		```
+		```python
+        通过位置:
+        	'Hello, %s' % 'world' or 'Hello, {0}'.format('world')
+
+        通过关键字参数:
+        	'{name},{age}'.format(age=98, name='kfc')
+
+        通过对象属性:
+			class Person:
+				def __init__(self,name,age):
+					self.name,self.age = name,age
+				def __str__(self):
+					return 'This guy is {self.name},is {self.age} old'.format(self=self)
+
+        通过下标:
+			p=['kfc', 98]
+			'{0[0]},{0[1]}'.format(p)
+
+        精度与类型:
+        	'{:.2f}'.format(3.1415926)
+		```
 		- *基本的列表操作*
 			- 元素赋值
 			- 删除元素
