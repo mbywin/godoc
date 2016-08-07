@@ -81,7 +81,7 @@ tags = ["python"]
 			- sort
 	- *列表解析*
 		```python
-		L= [(x+1,y+1) for x in range(3) for y in range(5) if y> 2 ]
+			L= [(x+1,y+1) for x in range(3) for y in range(5) if y> 2 ]
 		```
 	- *元祖使用*
 		- 元组可以在映射(和集合的成员)中作为键(key)使用，而列表不行
@@ -95,10 +95,10 @@ tags = ["python"]
 	- *字典的基本操作*
 		由于字典也是序列的一种，所起它有很多操作(比如len和成员资格)都和序列类似：
 		```python
-		len(d)：返回d中项的数量;
-		d[key]：返回这个key对应的value;
-		d[key] = v：将值v映射到key值为k的项;
-		key in did:检查d中是否包含键为k的项;
+			len(d)：返回d中项的数量;
+			d[key]：返回这个key对应的value;
+			d[key] = v：将值v映射到key值为k的项;
+			key in did:检查d中是否包含键为k的项;
 		```
 	- *字典常用函数*
 		- clear
