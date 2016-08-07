@@ -80,9 +80,9 @@ tags = ["python"]
 			- remove
 			- sort
 	- *列表解析*
-		```python
-			L = [(x+1,y+1) for x in range(3) for y in range(5) if y> 2 ]
-		```
+	```python
+		L = [(x+1,y+1) for x in range(3) for y in range(5) if y> 2 ]
+	```
 	- *元祖使用*
 		- 元组可以在映射(和集合的成员)中作为键(key)使用，而列表不行
 	    - 元组作为很多内建函数和方法的返回值存在
