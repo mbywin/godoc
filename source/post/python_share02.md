@@ -162,7 +162,7 @@ tags = ["python"]
 			交集、合集（并集）、差集等：
 	```
 
-![集合操作](http://www.iplaypython.com/uploads/allimg/131215/2-131215203406215.jpg "集合操作")
+	![集合操作](http://www.iplaypython.com/uploads/allimg/131215/2-131215203406215.jpg "集合操作")
 
 ***
 
