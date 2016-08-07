@@ -65,28 +65,6 @@ tags = ["python"]
 		- *list函数*
 		```python
 			list()
-			'hello'
-		```
-		```python
-        通过位置:
-        	'Hello, %s' % 'world' or 'Hello, {0}'.format('world')
-
-        通过关键字参数:
-        	'{name},{age}'.format(age=98, name='kfc')
-
-        通过对象属性:
-			class Person:
-				def __init__(self,name,age):
-					self.name,self.age = name,age
-				def __str__(self):
-					return 'This guy is {self.name},is {self.age} old'.format(self=self)
-
-        通过下标:
-			p=['kfc', 98]
-			'{0[0]},{0[1]}'.format(p)
-
-        精度与类型:
-        	'{:.2f}'.format(3.1415926)
 		```
 		- *基本的列表操作*
 			- 元素赋值
@@ -116,12 +94,12 @@ tags = ["python"]
 		- 需要占用大量的内存，内存浪费多
 	- *字典的基本操作*
 		由于字典也是序列的一种，所起它有很多操作(比如len和成员资格)都和序列类似：
-		```python
-			len(d)：返回d中项的数量;
-			d[key]：返回这个key对应的value;
-			d[key] = v：将值v映射到key值为k的项;
-			key in did:检查d中是否包含键为k的项;
-		```
+	```python
+		len(d)：返回d中项的数量;
+		d[key]：返回这个key对应的value;
+		d[key] = v：将值v映射到key值为k的项;
+		key in did:检查d中是否包含键为k的项;
+	```
 	- *字典常用函数*
 		- clear
 		- copy
@@ -136,23 +114,23 @@ tags = ["python"]
 		- setdefault
 		- update
 	- *字典遍历：*
-		```python
-			for i in d:
-				t = i + d[i]
+	```python
+		for i in d:
+			t = i + d[i]
 
-			for k,v in d.items():
-				t = k + v
+		for k,v in d.items():
+			t = k + v
 
-			for k,v in d.iteritems():
-				t = k + v
+		for k,v in d.iteritems():
+			t = k + v
 
-			for k,v in zip(d.iterkeys(),d.itervalues()):
-				t = k + v
-		```
+		for k,v in zip(d.iterkeys(),d.itervalues()):
+			t = k + v
+	```
 	- *字典解析：*
-		```python
-			{value:key for key ,value in a_dict.items()}
-		```
+	```python
+		{value:key for key ,value in a_dict.items()}
+	```
 5. ___集合___
 	- *特点*
 		- 无序的
