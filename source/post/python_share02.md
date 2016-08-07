@@ -67,7 +67,7 @@ tags = ["python"]
 		- *list函数*
 
 		```python
-		list()
+			list()
 		```
 
 		- *基本的列表操作*
