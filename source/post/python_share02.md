@@ -314,7 +314,8 @@ tags = ["python"]
 		reduce(fn, [1, 3, 5, 7, 9])
 	```
 	- filter
-> 在一个list中，删掉偶数，只保留奇数:
+
+	> 在一个list中，删掉偶数，只保留奇数:
 
     ```python
         def is_odd(n):
