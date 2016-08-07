@@ -328,6 +328,7 @@ tags = ["python"]
         sorted(['bob', 'about', 'Zoo', 'Credit'], key=str.lower, reverse=True)
     ```
 - 返回函数（闭包）
+
 	> 函数作为返回值：
 	> 高阶函数除了可以接受函数作为参数外，还可以把函数作为结果值返回。
 
@@ -394,7 +395,8 @@ tags = ["python"]
     ```
 
 - 偏函数
-> functools.partial的作用就是，把一个函数的某些参数给固定住（也就是设置默认值），返回一个新的函数，调用这个新函数会更简单。
+
+	> functools.partial的作用就是，把一个函数的某些参数给固定住（也就是设置默认值），返回一个新的函数，调用这个新函数会更简单。
 
     ```python
         int2 = functools.partial(int, base=2)
