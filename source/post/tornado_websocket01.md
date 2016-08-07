@@ -4,7 +4,7 @@ title = "tornado websocket实现日志实时打印"
 slug = "2016"
 date = "2016-06-23 09:00:59"
 author = "miaoboyong"
-tags = ["python", "tornado"]
+tags = ["python", "tornado", "websocket"]
 
 ```
 <!--lang: python-->
