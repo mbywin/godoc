@@ -169,45 +169,46 @@ tags = ["python"]
 #### __python流程控制:__
 1. ___if 语句___
 
-```python
-	if x < 0:
-		x = 0
-		print('Negative changed to zero')
-	elif x == 0:
-		print('Zero')
-	elif x == 1:
-		print('Single')
-	else:
-		print('More')
-```
+    ```python
+        if x < 0:
+            x = 0
+            print('Negative changed to zero')
+        elif x == 0:
+            print('Zero')
+        elif x == 1:
+            print('Single')
+        else:
+            print('More')
+    ```
 
 2. ___for 语句___
 
-```python
-	words = ['cat', 'window', 'defenestrate', '']
-	for word in words:
-		if not words:
-			break
-	else:
-		print(words)
-```
+    ```python
+        words = ['cat', 'window', 'defenestrate', '']
+        for word in words:
+            if not words:
+                break
+        else:
+            print(words)
+    ```
 
 3. ___range() 函数__
 
 4. ___break 和 continue 语句___
-	- break:	用于跳出最近的一级 for 或 while 循环。
-	- continue:	 语句是从 C 中借鉴来的，它表示循环继续执行下一次迭代:
+
+	> break:	用于跳出最近的一级 for 或 while 循环。
+	> continue:	 语句是从 C 中借鉴来的，它表示循环继续执行下一次迭代:
 5. ___pass 语句___
 
-```python
-	pass 语句什么也不做。它用于那些语法上必须要有什么语句，但程序什么也不做的场合，例如:
+	> pass 语句什么也不做。它用于那些语法上必须要有什么语句，但程序什么也不做的场合，例如:
 
-	while True:
- 		pass
+    ```python
+        while True:
+            pass
 
-	class MyEmptyClass:
-		pass
-```
+        class MyEmptyClass:
+            pass
+    ```
 
 #### __函数:__
 1. ___调用函数___
@@ -229,63 +230,65 @@ tags = ["python"]
 3. ___函数的参数___
 	- 位置参数
 
-	```python
-		def power(x, n):
-			s = 1
-			while n > 0:
-				n = n - 1
-				s = s * x
-		return s
-	```
+    ```python
+        def power(x, n):
+            s = 1
+            while n > 0:
+                n = n - 1
+                s = s * x
+        return s
+    ```
 
 	- 默认参数
 
-	```python
-		def power(x, n=2):
-			s = 1
-			while n > 0:
-				n = n - 1
-				s = s * x
-			return s
-	```
+    ```python
+        def power(x, n=2):
+            s = 1
+            while n > 0:
+                n = n - 1
+                s = s * x
+            return s
+    ```
 
 	- 可变参数
 
-	```python
-		def calc(*numbers):
-			sum = 0
-			for n in numbers:
-				sum = sum + n * n
-			return sum
-	```
+    ```python
+        def calc(*numbers):
+            sum = 0
+            for n in numbers:
+                sum = sum + n * n
+            return sum
+    ```
 
 	- 关键字参数
 
-	```python
-		def person(name, age, **kw):
-			print('name:', name, 'age:', age, 'other:', kw)
-	```
+    ```python
+        def person(name, age, **kw):
+            print('name:', name, 'age:', age, 'other:', kw)
+    ```
 
 	- 命名关键字参数
 
-	```python
-		def person(name, age, *args, city, job):
-			print(name, age, args, city, job)
-	```
+    ```python
+        def person(name, age, *args, city, job):
+            print(name, age, args, city, job)
+    ```
 
 	- 参数组合
 
-	```python
-		def f1(a, b, c=0, *args, **kw):
-			print('a =', a, 'b =', b, 'c =', c, 'args =', args, 'kw =', kw)
-	-
-		def f2(a, b, c=0, *, d, **kw):
-			print('a =', a, 'b =', b, 'c =', c, 'd =', d, 'kw =', kw)
-	```
+    ```python
+        def f1(a, b, c=0, *args, **kw):
+            print('a =', a, 'b =', b, 'c =', c, 'args =', args, 'kw =', kw)
+    -
+        def f2(a, b, c=0, *, d, **kw):
+            print('a =', a, 'b =', b, 'c =', c, 'd =', d, 'kw =', kw)
+    ```
 
 4. ___递归函数___
-	- 在函数内部，可以调用其他函数。如果一个函数在内部调用自身本身，这个函数就是递归函数
-	- 使用递归函数的优点是逻辑简单清晰，缺点是过深的调用会导致栈溢出。
+
+	> 在函数内部，可以调用其他函数。如果一个函数在内部调用自身本身，这个函数就是递归函数
+	>
+	> 使用递归函数的优点是逻辑简单清晰，缺点是过深的调用会导致栈溢出。
 
     ```python
         def fact(n):
