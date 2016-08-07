@@ -297,8 +297,90 @@ tags = ["python"]
             return n * fact(n - 1)
     ```
 
-5. ___函数式编程___
-- 高阶函数
+#### __高级特性__:
+1. ___切片___(列表和元祖)
+
+    ```python
+        L = ['Michael', 'Sarah', 'Tracy', 'Bob', 'Jack']
+
+        取前3个元素:
+            L[0:3], L[:3]
+        从索引1开始，取出2个元素出来:
+            L[1:3]
+        L[-1]取倒数第一个元素，那么它同样支持倒数切片
+            L[-2:]
+        原样复制一个list
+            L[:]
+    ```
+
+2. ___迭代___
+	> 我们已经知道，可以直接作用于for循环的数据类型有以下几种：
+	> 一类是集合数据类型，如list、tuple、dict、set、str等；
+	> 一类是generator，包括生成器和带yield的generator function。
+	> 这些可以直接作用于for循环的对象统称为可迭代对象：Iterable。
+
+    ```python
+    	from collections import Iterable
+        isinstance('abc', Iterable) # str是否可迭代
+        isinstance([1,2,3], Iterable) # list是否可迭代
+        isinstance(123, Iterable) # 整数是否可迭代
+
+    	for i, value in enumerate(['A', 'B', 'C']):
+     		print(i, value)
+    ```
+
+3. ___列表生成式___
+
+	```python
+    	[x * x for x in range(1, 11) if x % 2 == 0]
+
+        import os
+        [d for d in os.listdir('.')]
+    ```
+
+4. ___生成器___
+
+	> 通过列表生成式，我们可以直接创建一个列表。但是，受到内存限制，列表容量肯定是有限的。而且，创建一个包含100万个元素的列表，不仅占用很大的存储空间，如果我们仅仅需要访问前面几个元素，那后面绝大多数元素占用的空间都白白浪费了。
+
+	> 所以，如果列表元素可以按照某种算法推算出来，那我们是否可以在循环的过程中不断推算出后续的元素呢？这样就不必创建完整的list，从而节省大量的空间。在Python中，这种一边循环一边计算的机制，称为生成器：generator
+
+    ```python
+    	g = (x * x for x in range(10))
+
+    	def fib(max):
+    		n, a, b = 0, 0, 1
+    		while n < max:
+        		yield b
+        		a, b = b, a + b
+        		n = n + 1
+    		return 'done'
+    ```
+
+5. ___迭代器___
+
+	> 生成器不但可以作用于for循环，还可以被next()函数不断调用并返回下一个值，直到最后抛出StopIteration错误表示无法继续返回下一个值了
+	>
+	> 可以被next()函数调用并不断返回下一个值的对象称为迭代器：Iterator。
+	>
+	> 生成器都是Iterator对象，但list、dict、str虽然是Iterable，却不是Iterator。
+
+    ```python
+    	from collections import Iterator
+		isinstance((x for x in range(10)), Iterator): True
+		isinstance([], Iterator):False
+		isinstance({}, Iterator):False
+		isinstance('abc', Iterator):False
+    ```
+
+    > 凡是可作用于for循环的对象都是Iterable类型；
+
+	> 凡是可作用于next()函数的对象都是Iterator类型，它们表示一个惰性计算的序列；
+
+	> 集合数据类型如list、dict、str等是Iterable但不是Iterator，不过可以通过iter()函数获得一个Iterator对象。
+
+
+#### __函数式编程__:
+1. ___高阶函数___
 	- map/reduce：
 
 	```python
@@ -330,7 +412,7 @@ tags = ["python"]
     ```python
         sorted(['bob', 'about', 'Zoo', 'Credit'], key=str.lower, reverse=True)
     ```
-- 返回函数（闭包）
+2. ___返回函数（闭包）___
 
 	> 函数作为返回值：
 	> 高阶函数除了可以接受函数作为参数外，还可以把函数作为结果值返回。
@@ -369,13 +451,13 @@ tags = ["python"]
                 fs.append(f(i)) # f(i)立刻被执行，因此i的当前值被传入f()
             return fs
 	```
-- 匿名函数(lambda)
+3. ___匿名函数(lambda)___
 
     ```python
          list(map(lambda x: x * x, [1, 2, 3, 4, 5, 6, 7, 8, 9]))
     ```
 
-- 装饰器
+4. ___装饰器___
 
     ```python
         import functools
@@ -397,7 +479,7 @@ tags = ["python"]
             return decorator
     ```
 
-- 偏函数
+5. ___偏函数___
 
 	> functools.partial的作用就是，把一个函数的某些参数给固定住（也就是设置默认值），返回一个新的函数，调用这个新函数会更简单。
 
