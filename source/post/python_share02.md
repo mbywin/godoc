@@ -12,12 +12,12 @@ tags = ["python"]
 1. 整数、浮点数
 2. 字符串
 	- *常用字符串函数*
-			1. find
-			2. join
-			3. lower
-			4. replace
-			5. split
-			6. strip
+		- find
+		- join
+		- lower
+		- replace
+		- split
+		- strip
 	- *字符串格式化
 	```python
         通过位置:
@@ -42,73 +42,79 @@ tags = ["python"]
 	```
 3. ___序列（列表，元祖）___
 	- *通用操作*
-			1. 索引
-			2. 分片
-			3. 加
-			4. 乘
-			5. 检查某个元素是否属于这序列
-			6. 计算序列长度
-			7. 找出最大元素和最小元素
+		- 索引
+		- 分片
+		- 加
+		- 乘
+		- 检查某个元素是否属于这序列
+		- 计算序列长度
+		- 找出最大元素和最小元素
 	- *列表特点*
-			1. 有序的集合
-			2. 通过偏移来索引，从而读取数据
-			3. 支持嵌套
-			4. 可变的类型
-			5. 查找和插入的时间随着元素的增加而增加
-			6. 占用空间小，浪费内存很少
+		- 有序的集合
+		- 通过偏移来索引，从而读取数据
+		- 支持嵌套
+		- 可变的类型
+		- 查找和插入的时间随着元素的增加而增加
+		- 占用空间小，浪费内存很少
 	- *元祖特点*
-			1. 有序的集合
-			2. 通过偏移来取数据
-			3. 属于不可变的对象，不能在原地修改内容，没有排序，修改等操作。
-			*注：只有1个元素的tuple定义时必须加一个逗号,，来消除歧义: `t = (1,)`*
+		- 有序的集合
+		- 通过偏移来取数据
+		- 属于不可变的对象，不能在原地修改内容，没有排序，修改等操作。
+		*注：只有1个元素的tuple定义时必须加一个逗号,，来消除歧义: `t = (1,)`*
 	- *列表操作*
 		- *list函数*
-				list()
+			```python
+			list()
+			```
 		- *基本的列表操作*
-				元素赋值
-				删除元素
-				分片赋值
+			- 元素赋值
+			- 删除元素
+			- 分片赋值
 		- *列表方法*
-				append
-				count
-				extend
-				index
-				insert
-				pop
-				remove
-				remove
-				sort
+			- append
+			- count
+			- extend
+			- index
+			- insert
+			- pop
+			- remove
+			- sort
 	- *列表解析*
-			L= [(x+1,y+1) for x in range(3) for y in range(5) if y> 2 ]
+		```python
+		L= [(x+1,y+1) for x in range(3) for y in range(5) if y> 2 ]
+		```
 	- *元祖使用*
-			元组可以在映射(和集合的成员)中作为键(key)使用，而列表不行
-			元组作为很多内建函数和方法的返回值存在
+		- 元组可以在映射(和集合的成员)中作为键(key)使用，而列表不行
+	    - 元组作为很多内建函数和方法的返回值存在
 4. ___字典___
 	- *特点*
-			1. 无序的
-			2. key必须是不可变对象
-			3. 查找和插入的速度极快，不会随着key的增加而变慢
-			4. 需要占用大量的内存，内存浪费多
+		- 无序的
+		- key必须是不可变对象
+		- 查找和插入的速度极快，不会随着key的增加而变慢
+		- 需要占用大量的内存，内存浪费多
 	- *字典的基本操作*
-			由于字典也是序列的一种，所起它有很多操作(比如len和成员资格)都和序列类似：
-			len(d)：返回d中项的数量;
-			d[key]：返回这个key对应的value;
-			d[key] = v：将值v映射到key值为k的项;
-			key in did:检查d中是否包含键为k的项;
+		由于字典也是序列的一种，所起它有很多操作(比如len和成员资格)都和序列类似：
+		```python
+		len(d)：返回d中项的数量;
+		d[key]：返回这个key对应的value;
+		d[key] = v：将值v映射到key值为k的项;
+		key in did:检查d中是否包含键为k的项;
+		```
 	- *字典常用函数*
-			1. clear
-			2. copy
-			2. fromkeys
-			4. get
-			5. has_key
-			6. items和iteritems
-			7. keys和iterkeys
-			8. values和itervalues
-			9. pop
-			10. popitem
-			11. setdefault
-			12. update
+		- clear
+		- copy
+		- fromkeys
+		- get
+		- has_key
+		- items和iteritems
+		- keys和iterkeys
+		- values和itervalues
+		- pop
+		- popitem
+		- setdefault
+		- update
 	- *字典遍历：*
+		```python
 			for i in d:
 				t = i + d[i]
 
@@ -120,8 +126,11 @@ tags = ["python"]
 
 			for k,v in zip(d.iterkeys(),d.itervalues()):
 				t = k + v
+		```
 	- *字典解析：*
+		```python
 			{value:key for key ,value in a_dict.items()}
+		```
 5. ___集合___
 	- *特点*
 			1. 无序的
