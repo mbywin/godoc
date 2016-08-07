@@ -327,3 +327,73 @@ tags = ["python"]
     ```python
         sorted(['bob', 'about', 'Zoo', 'Credit'], key=str.lower, reverse=True)
     ```
+- 返回函数（闭包）
+	> 函数作为返回值：
+	> 高阶函数除了可以接受函数作为参数外，还可以把函数作为结果值返回。
+
+    ```python
+        def lazy_sum(*args):
+            def sum():
+                ax = 0
+                for n in args:
+                ax = ax + n
+                return ax
+            return sum
+        f = lazy_sum(1, 3, 5, 7, 9)
+    ```
+
+	> 注意到返回的函数在其定义内部引用了局部变量args，所以，当一个函数返回了一个函数后，其内部的局部变量还被新函数引用。
+
+	```python
+        def count():
+            fs = []
+            for i in range(1, 4):
+                def f():
+                    return i*i
+                fs.append(f)
+            return fs
+
+        f1, f2, f3 = count()
+
+        def count():
+            def f(j):
+                def g():
+                    return j*j
+                return g
+            fs = []
+            for i in range(1, 4):
+                fs.append(f(i)) # f(i)立刻被执行，因此i的当前值被传入f()
+            return fs
+	```
+- 匿名函数(lambda)
+```python
+	 list(map(lambda x: x * x, [1, 2, 3, 4, 5, 6, 7, 8, 9]))
+```
+
+- 装饰器
+```python
+	import functools
+
+	def log(func):
+    	@functools.wraps(func)
+    	def wrapper(*args, **kw):
+        	print('call %s():' % func.__name__)
+        	return func(*args, **kw)
+    	return wrapper
+
+	def log(text):
+        def decorator(func):
+            @functools.wraps(func)
+            def wrapper(*args, **kw):
+                print('%s %s():' % (text, func.__name__))
+                return func(*args, **kw)
+            return wrapper
+    	return decorator
+```
+- 偏函数
+> functools.partial的作用就是，把一个函数的某些参数给固定住（也就是设置默认值），返回一个新的函数，调用这个新函数会更简单。
+
+```python
+	int2 = functools.partial(int, base=2)
+    max2 = functools.partial(max, 10)
+```
