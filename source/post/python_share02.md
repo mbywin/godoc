@@ -9,8 +9,23 @@ tags = ["python"]
 # python 学习分享-2
 ***
 #### __python标准数据类型:__
-1. 整数、浮点数
-2. 字符串
+1. ___整数、浮点数___
+2. ___字符串___
+	- *字符编码*
+		- ASCII
+		- Unicode
+		- UTF-8
+
+	> ![字符编码](http://www.liaoxuefeng.com/files/attachments/0013872491802084161ec9ef7d143a897e1584819535656000/0 "字符编码")
+	> ![utf-8](http://www.liaoxuefeng.com/files/attachments/001387245992536e2ba28125cf04f5c8985dbc94a02245e000/0 "utf-8")
+
+	> 注：由于Python源代码也是一个文本文件，所以，当你的源代码中包含中文的时候，在保存源代码时，就需要务必指定保存为UTF-8编码。当Python解释器读取源代码时，为了让它按UTF-8编码读取，我们通常在文件开头写上这两行：
+
+	```python
+		#!/usr/bin/env python3
+		# -*- coding: utf-8 -*-
+	```
+
 	- *常用字符串函数*
 		- find
 		- join
