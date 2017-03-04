@@ -1,2 +1,3 @@
 # godoc
+test
 ...
